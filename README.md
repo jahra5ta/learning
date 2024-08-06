@@ -1,4 +1,6 @@
 # learning
 My learning project;
 
-Files in this repository are subject to my skillbox final project for competing linix administrator module.
+Файлы в этом репозитории относятся к финальной работе по курсу "Администрирование Linux"
+
+newvm.sh - скрипт для создания новой виртуальной машины в Яндекс облаке
