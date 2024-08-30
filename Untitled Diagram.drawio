@@ -1,9 +1,68 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15" version="24.7.8">
   <diagram name="Page-1" id="i6nJWEUhXOWo1tigKRqn">
-    <mxGraphModel>
+    <mxGraphModel dx="547" dy="370" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-1" value="Client" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-2" value="VPN SERV" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-3" value="VPN CA" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="380" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-4" value="VPN ALERT" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="480" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="BE2HVgvtTGu_l0hSt5Pd-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="299.65999999999997" as="sourcePoint" />
+            <mxPoint x="280" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-6" value="UDP 1194" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;fontSize=10;" connectable="0" vertex="1" parent="BE2HVgvtTGu_l0hSt5Pd-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-11" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.25;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" target="BE2HVgvtTGu_l0hSt5Pd-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="480" as="sourcePoint" />
+            <mxPoint x="320" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="300" y="450" />
+              <mxPoint x="250" y="450" />
+              <mxPoint x="250" y="350" />
+              <mxPoint x="300" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-12" value="TCP 9090" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;fontSize=10;" connectable="0" vertex="1" parent="BE2HVgvtTGu_l0hSt5Pd-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endFill=1;startArrow=classic;startFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="420.00000000000006" as="sourcePoint" />
+            <mxPoint x="340" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-17" value="TCP 9090" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;fontSize=10;" connectable="0" vertex="1" parent="BE2HVgvtTGu_l0hSt5Pd-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-18" value="VPN SERV" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="299.77" as="sourcePoint" />
+            <mxPoint x="440" y="299.77" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BE2HVgvtTGu_l0hSt5Pd-20" value="TCP 80&lt;div&gt;TCP 443&lt;/div&gt;" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;fontSize=10;" connectable="0" vertex="1" parent="BE2HVgvtTGu_l0hSt5Pd-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
