@@ -1,0 +1,1 @@
+0 * * * * yc-user bash /home/yc-user/deb-ca/backup_ca.sh
