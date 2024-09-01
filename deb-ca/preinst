@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+mkdir /tmp/ca
+mkdir /tmp/vpn-ca
+mkdir /tmp/vpn-ca/node-exporter
+mkdir /tmp/vpn-ca/easy-rsa
+mkdir /tmp/vpn-ca/easy-rsa/pki
+ln -s /usr/share/easy-rsa/* /tmp/vpn-ca/easy-rsa/

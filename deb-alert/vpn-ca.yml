@@ -1,0 +1,47 @@
+groups:
+- name: host-hardware
+  rules:
+  - alert: HostOutOfDiskSpace
+    expr: ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes < 15 and ON (instance, device, mountpoint) node_filesystem_readonly == 0) * on(instance) group_left (nodename) node_uname_info{nodename=~".+"}
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: Host out of disk space (instance {{ $labels.instance }})
+      description: "Disk is almost full (< 15% left)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+  - alert: HostOutOfMemory
+    expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 15) * on(instance) group_left (nodename) node_uname_info{nodename=~".+"}
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: Host out of memory (instance {{ $labels.instance }})
+      description: "Node memory is filling up (< 15% left)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+  - alert: HostRequiresReboot
+    expr: (node_reboot_required > 0) * on(instance) group_left (nodename) node_uname_info{nodename=~".+"}
+    for: 4h
+    labels:
+      severity: info
+    annotations:
+      summary: Host requires reboot (instance {{ $labels.instance }})
+      description: "{{ $labels.instance }} requires a reboot.\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+  - alert: HostHighCpuLoad
+    expr: (sum by (instance) (avg by (mode, instance) (rate(node_cpu_seconds_total{mode!="idle"}[2m]))) > 0.9) * on(instance) group_left (nodename) node_uname_info{nodename=~".+"}
+    for: 10m
+    labels:
+      severity: warning
+    annotations:
+      summary: Host high CPU load (instance {{ $labels.instance }})
+      description: "CPU load is > 85%\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+  - alert: OpenVPNIsRunning
+    expr: node_systemd_unit_state{instance="89.169.163.133:9100",name=~"openvpn-server@server.service",state="inactive"} == 1
+    for: 1m
+    labels:
+      severity: warning
+      annotations:
+      summary: VPN Server process stopped (instance {{ $labels.instance }})
+      description: "OpenVPN server process stopped"

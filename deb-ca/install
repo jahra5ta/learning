@@ -1,0 +1,5 @@
+node-exporter.gz /tmp/ca
+pki.gz /tmp/ca
+prometheus-node-exporter.service /tmp/ca
+vars /tmp/ca
+vpn-iptables /tmp/ca

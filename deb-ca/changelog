@@ -1,0 +1,5 @@
+deb (1.0-1) UNRELEASED; urgency=medium
+
+  * Initial release includes files for VPN CA VM.
+
+ -- unknown <yc-user@unknown>  Tue, 20 Aug 2024 18:57:27 +0000

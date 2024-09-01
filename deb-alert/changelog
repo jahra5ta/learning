@@ -1,0 +1,5 @@
+vpn-alert (1.0-1) UNRELEASED; urgency=medium
+
+  * Initial release. VPN monitoring service.
+
+ -- unknown <yc-user@unknown>  Sat, 24 Aug 2024 15:11:56 +0000

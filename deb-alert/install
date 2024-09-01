@@ -1,0 +1,6 @@
+alertmanager.yml /vpn-alert
+node-exporter-vpn-ca.crt /vpn-alert
+node-exporter-vpn-serv.crt /vpn-alert
+prometheus.yml /vpn-alert
+vpn-ca.yml /vpn-alert
+rules.v4 /vpn-alert
