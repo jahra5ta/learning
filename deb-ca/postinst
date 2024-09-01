@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+set -x
+tar -xvf /tmp/ca/node-exporter.gz -C /tmp/vpn-ca
+tar -xvf /tmp/ca/pki.gz -C /tmp/vpn-ca/easy-rsa/pki
+chmod 700 /tmp/vpn-ca/node-exporter/*
+chmod 700 /tmp/vpn-ca/easy-rsa/pki
+echo "Archieves unpacked, ready to go!"
+cp /tmp/ca/vpn-iptables /etc/iptables/rules.v4
+echo "Firewall is set up"
+systemctl stop prometheus-node-exporter
+mv /tmp/ca/prometheus-node-exporter.service /lib/systemd/system/prometheus-node-exporter.service
+systemctl daemon-reload
+systemctl start prometheus-node-exporter
+echo "Node-exporter has been restarted with web.config"

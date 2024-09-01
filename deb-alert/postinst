@@ -1,0 +1,15 @@
+#!/bin/bash
+set -x
+set -e
+chmod a=rw /vpn-alert/*
+mv /vpn-alert/alertmanager.yml /etc/prometheus/alertmanager.yml
+mv /vpn-alert/node-exporter-vpn-ca.crt /etc/prometheus/node-exporter-vpn-ca.crt
+mv /vpn-alert/node-exporter-vpn-serv.crt /etc/prometheus/node-exporter-vpn-serv.crt
+mv /vpn-alert/prometheus.yml /etc/prometheus/prometheus.yml
+mv /vpn-alert/vpn-ca.yml /etc/prometheus/vpn-ca.yml
+echo "Prometheus config files successfully imported"
+systemctl restart prometheus
+systemctl restart prometheus-alertmanager
+echo "All services have been restarted and ready to go"
+mv /vpn-alert/rules.v4 /etc/iptables/rules.v4
+echo "Your system need to be rebooted to apply iptables rules"

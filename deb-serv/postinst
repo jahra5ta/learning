@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+set -x
+ln -s /usr/share/easy-rsa/* /vpn-serv/easy-rsa/
+tar -xvf /vpn-serv/vpn-serv.tar -C /vpn-serv
+chown -R yc-user:yc-user /vpn-serv
+chmod -R 707 /vpn-serv
+mv /vpn-serv/client /etc/openvpn/client
+mv /vpn-serv/server /etc/openvpn/server
+systemctl stop prometheus-node-exporter.service
+mv /vpn-serv/prometheus-node-exporter.service /lib/systemd/system/prometheus-node-exporter.service
+systemctl daemon-reload
+systemctl restart prometheus-node-exporter
+systemctl restart openvpn
